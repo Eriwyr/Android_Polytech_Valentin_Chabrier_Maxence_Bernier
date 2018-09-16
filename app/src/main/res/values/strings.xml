@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Film présentation</string>
+
+    <!-- Custom AppBar -->
+    <string name="page_title">PAGE TITLE</string>
+    <string name="btn_backChevron">Back title</string>
+
+    <!-- Buttons -->
+    <string name="btn_Partager">Partager</string>
+    <string name="btn_Aimer">Aimer</string>
+    <string name="btn_Commenter">Commenter</string>
+
+    <!-- Labels -->
+    <string name="label_Titre">Titre</string>
+    <string name="label_TitreOriginal">Titre Original</string>
+    <string name="label_Description">Description</string>
+    <string name="label_MotsCles">Mots clés</string>
+    <string name="label_About">À propos du film</string>
+
+    <!-- Contents -->
+    <string name="content_Titre">Retour vers le Futur II</string>
+    <string name="content_TitreOriginal">Back to the Futur II</string>
+    <string name="content_Description">Description description description description description </string>
+    <string name="content_MotCle">XOXOXOX</string>
+    <string name="content_com">Liste des commentaires</string>
+    <string name="content_say">Dire quelque chose...</string>
+
+</resources>

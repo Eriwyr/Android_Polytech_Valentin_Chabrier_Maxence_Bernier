@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomAppBar">
+        <attr name="textBackButton" format="string"/>
+        <attr name="textMainTitle" format="string"/>
+        <attr name="mainLayoutColor" format="reference"/>
+    </declare-styleable>
+</resources>
