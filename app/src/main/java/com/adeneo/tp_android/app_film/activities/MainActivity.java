@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         this.commentButton = findViewById(R.id.commentButton);
         commentButton.setOnClickListener(buttonListener);
         this.likeButton = findViewById(R.id.likeButton);
