@@ -1,4 +1,4 @@
-package com.adeneo.lab1.filmprsentation;
+package com.adeneo.tp_android.app_film;
 
 import org.junit.Test;
 

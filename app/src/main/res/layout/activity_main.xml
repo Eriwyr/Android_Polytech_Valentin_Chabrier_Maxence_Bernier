@@ -14,7 +14,7 @@
         android:background="@color/colorPrimaryDark"
 
         android:orientation="vertical"
-        tools:context=".MainActivity"
+        tools:context=".activities.MainActivity"
         android:id="@+id/scrollView"
         android:layout_above="@+id/footer"
         android:layout_alignParentTop="true"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.adeneo.lab1.filmprsentation.CustomAppBar
+            <com.adeneo.tp_android.app_film.custom_controls.CustomAppBar
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:textBackButton="@string/btn_backChevron"
@@ -37,7 +37,7 @@
                 >
 
 
-            </com.adeneo.lab1.filmprsentation.CustomAppBar>
+            </com.adeneo.tp_android.app_film.custom_controls.CustomAppBar>
 
 
             <ImageView

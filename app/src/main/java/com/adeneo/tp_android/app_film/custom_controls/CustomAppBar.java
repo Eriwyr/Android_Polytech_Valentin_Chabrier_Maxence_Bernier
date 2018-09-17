@@ -1,4 +1,4 @@
-package com.adeneo.lab1.filmprsentation;
+package com.adeneo.tp_android.app_film.custom_controls;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -9,6 +9,8 @@ import android.util.AttributeSet;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.adeneo.tp_android.app_film.R;
 
 public class CustomAppBar extends RelativeLayout {
 
@@ -41,7 +43,7 @@ public class CustomAppBar extends RelativeLayout {
     }
 
     private void initialize(Context context){
-        inflate(context,R.layout.appbar_layout, this);
+        inflate(context, R.layout.appbar_layout, this);
         this.backButtonChevron = findViewById(R.id.appbar_layout_backButton);
         this.mainTitleTextView = findViewById(R.id.appbar_layout_mainTitle);
         this.closeButton = findViewById(R.id.appbar_layout_closeButton);
