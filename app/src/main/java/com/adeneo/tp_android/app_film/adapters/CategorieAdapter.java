@@ -7,14 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.adeneo.tp_android.app_film.R;
-import com.adeneo.tp_android.app_film.activities.CategoriesActivity;
-import com.adeneo.tp_android.app_film.contracts.IRecyclerView;
 import com.adeneo.tp_android.app_film.contracts.ObjectAdapterAbstract;
 import com.adeneo.tp_android.app_film.list_cells.Categorie;
 import com.adeneo.tp_android.app_film.viewHolders.CategorieViewHolder;
 
 public class CategorieAdapter extends ObjectAdapterAbstract {
-
 
 
     public CategorieAdapter() {
@@ -26,8 +23,8 @@ public class CategorieAdapter extends ObjectAdapterAbstract {
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
 
+        View categorieView = LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_categorie, parent, false);
 
-        View categorieView = LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_categorie,parent,false);
 
         CategorieViewHolder categorieViewHolder = new CategorieViewHolder(categorieView);
 
@@ -37,11 +34,12 @@ public class CategorieAdapter extends ObjectAdapterAbstract {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Categorie currentCategorie = (Categorie) manager.getItems().get(position);
-        if(holder instanceof CategorieViewHolder && currentCategorie !=null){
+        if (holder instanceof CategorieViewHolder && currentCategorie != null) {
             CategorieViewHolder viewHolder = (CategorieViewHolder) holder;
             viewHolder.layoutForObject(currentCategorie);
         }
     }
+
 
     /*@Override
     public int getItemCount() {

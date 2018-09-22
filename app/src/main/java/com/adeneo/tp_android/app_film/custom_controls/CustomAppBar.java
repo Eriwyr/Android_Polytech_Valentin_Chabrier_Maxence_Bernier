@@ -20,7 +20,6 @@ public class CustomAppBar extends RelativeLayout {
     RelativeLayout mainLayout;
 
 
-
     public CustomAppBar(Context context) {
         super(context);
         initialize(context);
@@ -42,15 +41,15 @@ public class CustomAppBar extends RelativeLayout {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
-    private void initialize(Context context){
+    private void initialize(Context context) {
         inflate(context, R.layout.appbar_layout, this);
         this.backButtonChevron = findViewById(R.id.appbar_layout_backButton);
         this.mainTitleTextView = findViewById(R.id.appbar_layout_mainTitle);
         this.closeButton = findViewById(R.id.appbar_layout_closeButton);
     }
 
-    private void initialize(Context context, AttributeSet attrs){
-        inflate(context,R.layout.appbar_layout, this);
+    private void initialize(Context context, AttributeSet attrs) {
+        inflate(context, R.layout.appbar_layout, this);
         this.backButtonChevron = findViewById(R.id.appbar_layout_backButton);
         this.mainTitleTextView = findViewById(R.id.appbar_layout_mainTitle);
         this.closeButton = findViewById(R.id.appbar_layout_closeButton);
@@ -70,7 +69,7 @@ public class CustomAppBar extends RelativeLayout {
             }
 
             int layout = array.getResourceId(R.styleable.CustomAppBar_mainLayoutColor, 0);
-            if(this.mainLayout != null){
+            if (this.mainLayout != null) {
                 this.mainLayout.setBackgroundColor(getResources().getColor(layout));
             }
 

@@ -18,12 +18,12 @@ public class CategorieViewHolder extends ViewHolderAbstract {
 
     @Override
     public void layoutForObject(Object object) {
-       if ( object != null && object instanceof Categorie ) {
-           if(nameCategorie != null){
-               nameCategorie.setText(((Categorie)object).getName());
-               System.out.println(((Categorie)object).getName());
-           }
-       }
+        if (object != null && object instanceof Categorie) {
+            if (nameCategorie != null) {
+                nameCategorie.setText(((Categorie) object).getName());
+                System.out.println(((Categorie) object).getName());
+            }
+        }
     }
 
 

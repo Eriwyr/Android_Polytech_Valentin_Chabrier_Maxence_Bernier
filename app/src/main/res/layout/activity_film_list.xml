@@ -17,14 +17,12 @@
         >
     </com.adeneo.tp_android.app_film.custom_controls.CustomAppBar>
 
+
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/categorie_recycler_view"
+        android:id="@+id/film_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
-
-
-
 
 </LinearLayout>

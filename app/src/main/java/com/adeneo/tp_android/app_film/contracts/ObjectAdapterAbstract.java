@@ -4,8 +4,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-import com.adeneo.tp_android.app_film.activities.CategoriesActivity;
-
 public abstract class ObjectAdapterAbstract extends RecyclerView.Adapter {
 
     protected IRecyclerView manager;
@@ -25,4 +23,6 @@ public abstract class ObjectAdapterAbstract extends RecyclerView.Adapter {
     public void setManager(IRecyclerView manager) {
         this.manager = manager;
     }
+
+
 }

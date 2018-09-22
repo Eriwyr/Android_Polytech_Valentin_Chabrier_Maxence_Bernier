@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/letter_cell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        />
+    <LinearLayout
+        android:id="@+id/layout_movie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingRight="15dp"
+        android:layout_below="@id/letter_cell"
+        >
+
+        <ImageView
+            android:id="@+id/film_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back_to_the_future"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/film_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:text="Titre du Film"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/film_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/chevron_left_svg"
+                android:paddingTop="5dp"
+                android:text="Descritption du film"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X films"
+        android:layout_below="@id/layout_movie"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:textSize="12dp"
+        android:padding="10dp"
+        android:textColor="@android:color/darker_gray"
+        />
+
+</RelativeLayout>

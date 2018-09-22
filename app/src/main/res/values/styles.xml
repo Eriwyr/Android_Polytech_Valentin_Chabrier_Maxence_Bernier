@@ -38,4 +38,8 @@
         <item name="android:background">@drawable/custom_send_button</item>
     </style>
 
+    <style name ="ChevronLeftButton">
+        <item name="android:background">@drawable/custom_chevron_left_button</item></style>
+
+
 </resources>
