@@ -7,12 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.adeneo.tp_android.app_film.R;
+import com.adeneo.tp_android.app_film.contracts.IItemOnClickManager;
 import com.adeneo.tp_android.app_film.contracts.ObjectAdapterAbstract;
 import com.adeneo.tp_android.app_film.list_cells.Categorie;
 import com.adeneo.tp_android.app_film.viewHolders.CategorieViewHolder;
 
 public class CategorieAdapter extends ObjectAdapterAbstract {
-
+    IItemOnClickManager onClickManager;
 
     public CategorieAdapter() {
         super();
@@ -28,6 +29,8 @@ public class CategorieAdapter extends ObjectAdapterAbstract {
 
         CategorieViewHolder categorieViewHolder = new CategorieViewHolder(categorieView);
 
+        categorieViewHolder.setOnClickManager(onClickManager);
+
         return categorieViewHolder;
     }
 
@@ -40,13 +43,8 @@ public class CategorieAdapter extends ObjectAdapterAbstract {
         }
     }
 
-
-    /*@Override
-    public int getItemCount() {
-        return manager.getCountItem();
+    public void setOnClickManager(IItemOnClickManager onClickManager) {
+        this.onClickManager = onClickManager;
     }
 
-    public void setManager(CategoriesActivity manager) {
-        this.manager = manager;
-    }*/
 }

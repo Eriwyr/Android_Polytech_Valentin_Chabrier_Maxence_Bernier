@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.adeneo.tp_android.app_film.R;
 import com.adeneo.tp_android.app_film.adapters.CategorieAdapter;
+import com.adeneo.tp_android.app_film.contracts.IItemOnClickManager;
 import com.adeneo.tp_android.app_film.contracts.IRecyclerView;
 import com.adeneo.tp_android.app_film.list_cells.Categorie;
 
@@ -18,7 +19,7 @@ import java.util.Comparator;
 import java.util.List;
 
 
-public class CategoriesActivity extends AppCompatActivity implements IRecyclerView {
+public class CategoriesActivity extends AppCompatActivity implements IRecyclerView, IItemOnClickManager {
     private RecyclerView categoriesRecyclerView;
     private List<Categorie> categories;
 
@@ -46,6 +47,7 @@ public class CategoriesActivity extends AppCompatActivity implements IRecyclerVi
         this.categoriesRecyclerView = findViewById(R.id.categorie_recycler_view);
         CategorieAdapter adapter = new CategorieAdapter();
         adapter.setManager(this);
+        adapter.setOnClickManager(this);
 
         this.categoriesRecyclerView.setAdapter(adapter);
         this.categoriesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -86,4 +88,9 @@ public class CategoriesActivity extends AppCompatActivity implements IRecyclerVi
             }
         }
     };
+
+    @Override
+    public void onClickListItem(Object obj) {
+        finish();
+    }
 }

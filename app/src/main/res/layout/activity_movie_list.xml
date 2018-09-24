@@ -17,12 +17,24 @@
         >
     </com.adeneo.tp_android.app_film.custom_controls.CustomAppBar>
 
+    <Button
+        android:id="@+id/navigation_to_categories_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/categorie_button"
+        android:paddingLeft="50dp"
+
+        android:paddingRight="50dp"
+        android:text="Catégories"
+        android:textColor="@color/colorAccent"
+        android:textAllCaps="false"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/film_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </android.support.v7.widget.RecyclerView>
-
 </LinearLayout>

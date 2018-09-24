@@ -2,6 +2,8 @@ package com.adeneo.tp_android.app_film.activities;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,11 +12,14 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.adeneo.tp_android.app_film.R;
 import com.adeneo.tp_android.app_film.adapters.CommentAdapter;
 import com.adeneo.tp_android.app_film.contracts.IRecyclerView;
 import com.adeneo.tp_android.app_film.list_cells.Comment;
+import com.adeneo.tp_android.app_film.list_cells.Movie;
+import com.adeneo.tp_android.app_film.managers.MovieManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +30,24 @@ public class MainActivity extends AppCompatActivity implements IRecyclerView {
     private Button closeButton;
     private Button backButton;
     private Button sendButton;
+    private Button shareButton;
     private EditText commentEditText;
+    private TextView movieTitleTextView;
+    private TextView originalMovieTitleTextView;
+    private TextView descriptionMovieTextView;
+    private TextView movieKeywordsTexView;
     private RecyclerView commentRecyclerView;
     private List<Comment> listComments;
+
+    private int movieId;
+
     InputMethodManager imm;
+
+    public static Intent newActivity(Context context, int filmId) {
+        Intent i = new Intent(context, MainActivity.class);
+        i.putExtra("MOVIE_ID", filmId);
+        return i;
+    }
 
 
     @Override
@@ -43,6 +62,13 @@ public class MainActivity extends AppCompatActivity implements IRecyclerView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        movieTitleTextView = findViewById(R.id.movie_title);
+        originalMovieTitleTextView = findViewById(R.id.original_movie_title);
+        descriptionMovieTextView = findViewById(R.id.movie_description);
+        movieKeywordsTexView = findViewById(R.id.movie_keywords);
+
+        this.shareButton = findViewById(R.id.shareButton);
+        shareButton.setOnClickListener(buttonListener);
         this.commentButton = findViewById(R.id.commentButton);
         commentButton.setOnClickListener(buttonListener);
         this.likeButton = findViewById(R.id.likeButton);
@@ -64,7 +90,18 @@ public class MainActivity extends AppCompatActivity implements IRecyclerView {
         this.commentRecyclerView.setAdapter(adapter);
         this.commentRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        Intent i = getIntent();
 
+        movieId = i.getIntExtra("MOVIE_ID", 2);
+        System.out.println("ID MOVIE :" + movieId);
+        MovieManager movieManager = MovieManager.getInstance();
+
+        Movie currentMovie = movieManager.getMoviesById(movieId);
+
+        movieTitleTextView.setText(currentMovie.getTitle());
+        originalMovieTitleTextView.setText(currentMovie.getOriginalTitle());
+        descriptionMovieTextView.setText(currentMovie.getDescription());
+        movieKeywordsTexView.setText(currentMovie.getKeyWords());
     }
 
     private View.OnClickListener buttonListener = new View.OnClickListener() {
@@ -87,11 +124,29 @@ public class MainActivity extends AppCompatActivity implements IRecyclerView {
                 case R.id.sendButton:
                     onClickSend();
                     break;
+                case R.id.shareButton:
+                    onClickShare();
+                    break;
+
                 default:
                     break;
             }
         }
     };
+
+    private void onClickShare() {
+        String shareText = ((Movie) MovieManager.getInstance().getMoviesById(movieId)).getTitle();
+
+        Uri imageUri = Uri.parse("android.resource://" + getPackageName()
+                + "/drawable/" + "bttf");
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_TEXT, shareText);
+        shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+        shareIntent.setType("image/jpeg");
+        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        startActivity(Intent.createChooser(shareIntent, "send"));
+    }
 
     private void onClickComment() {
         commentEditText.requestFocus();
