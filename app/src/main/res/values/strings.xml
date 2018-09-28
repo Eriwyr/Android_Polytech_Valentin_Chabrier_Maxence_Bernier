@@ -24,5 +24,10 @@
     <string name="content_MotCle">XOXOXOX</string>
     <string name="content_com">Liste des commentaires</string>
     <string name="content_say">Dire quelque chose...</string>
+    <string name="content_title_default">Titre du film</string>
+    <string name="content_description_default">Description du film</string>
+    <string name="content_nb_film">X films</string>
+    <string name ="content_default_letter">X</string>
+
 
 </resources>

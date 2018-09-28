@@ -8,7 +8,7 @@
         android:id="@+id/name_categorie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Horreur"
+        android:text=""
         android:gravity="center"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"

@@ -82,6 +82,6 @@ public class MovieListActivity extends AppCompatActivity implements IRecyclerVie
     @Override
     public void onClickListItem(Object object) {
         Movie movie = (Movie) object;
-        startActivity(MainActivity.newActivity(this, movie.getId()));
+        startActivity(MovieActivity.newActivity(this, movie.getId()));
     }
 }

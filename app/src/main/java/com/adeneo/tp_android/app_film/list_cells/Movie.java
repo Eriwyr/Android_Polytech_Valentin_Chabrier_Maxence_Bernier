@@ -4,7 +4,6 @@ public class Movie {
 
     private int id;
     private int indexInLetterSubdivision;
-    //static int count;
     private String title;
     private String originalTitle;
     private String description;

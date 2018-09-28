@@ -24,7 +24,7 @@ import com.adeneo.tp_android.app_film.managers.MovieManager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements IRecyclerView {
+public class MovieActivity extends AppCompatActivity implements IRecyclerView {
     private Button commentButton;
     private Button likeButton;
     private Button closeButton;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements IRecyclerView {
     InputMethodManager imm;
 
     public static Intent newActivity(Context context, int filmId) {
-        Intent i = new Intent(context, MainActivity.class);
+        Intent i = new Intent(context, MovieActivity.class);
         i.putExtra("MOVIE_ID", filmId);
         return i;
     }
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements IRecyclerView {
         listComments.add(new Comment("Marie", "Comment comment comment comment comment ", 1));
         listComments.add(new Comment("Paul", "Comment comment comment comment comment comment comment comment ", 1));
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_movie);
 
         movieTitleTextView = findViewById(R.id.movie_title);
         originalMovieTitleTextView = findViewById(R.id.original_movie_title);
@@ -187,10 +187,7 @@ public class MainActivity extends AppCompatActivity implements IRecyclerView {
     }
 
     public void hideKeyboard(Activity activity) {
-        //InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        //Find the currently focused view, so we can grab the correct window token from it.
         View view = activity.getCurrentFocus();
-        //If no view currently has focus, create a new one, just so we can grab a window token from it
         if (view == null) {
             view = new View(activity);
         }

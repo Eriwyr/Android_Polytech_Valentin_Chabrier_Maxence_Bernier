@@ -44,7 +44,6 @@ public class CustomCommentImage extends android.support.v7.widget.AppCompatImage
         Bitmap bitmap = b.copy(Bitmap.Config.ARGB_8888, true);
 
         int w = getWidth();
-        //int h = getHeight( );
 
         Bitmap roundBitmap = getCroppedBitmap(bitmap, w);
         canvas.drawBitmap(roundBitmap, 0, 0, null);
@@ -58,7 +57,6 @@ public class CustomCommentImage extends android.support.v7.widget.AppCompatImage
             float smallest = Math.min(bmp.getWidth(), bmp.getHeight());
             float factor = smallest / radius;
             bitmap = Bitmap.createScaledBitmap(bmp, (int) (bmp.getWidth() / factor), (int) (bmp.getHeight() / factor), false);
-            //bitmap = bmp;
         } else {
             bitmap = bmp;
         }

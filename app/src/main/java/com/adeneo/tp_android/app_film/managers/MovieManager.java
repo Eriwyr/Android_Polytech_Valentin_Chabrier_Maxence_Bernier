@@ -70,6 +70,3 @@ public class MovieManager {
         return movies;
     }
 }
-
-
-//On back press

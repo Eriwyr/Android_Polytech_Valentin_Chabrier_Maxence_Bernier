@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
-                android:text="Titre du Film"
+                android:text="@string/content_title_default"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/chevron_left_svg"
                 android:paddingTop="5dp"
-                android:text="Descritption du film"
+                android:text="@string/content_description_default"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:maxLines="2"
